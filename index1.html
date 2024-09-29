@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A health tracker and care platform to monitor fitness, water intake, sleep, and overall health.">
+    <title>Health Care Tracker</title>
+
+    <!-- Linking Google Fonts for a clean look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #28a745;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #222;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #28a745;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .profile, .charts {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .profile-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .profile-card img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .charts .chart-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            width: 60%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            .profile, .charts {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-card, .chart-box {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Health Care Tracker</h1>
+    <p>Monitor your health, fitness, and wellness easily.</p>
+</header>
+
+<nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#profile">My Profile</a>
+    <a href="#fitness">Fitness Tracking</a>
+    <a href="#nutrition">Nutrition</a>
+    <a href="#sleep">Sleep</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container" id="dashboard">
+    
+    <div class="section">
+        <h2>Dashboard</h2>
+        <p>Welcome to your personal health tracker dashboard. Here you can monitor your progress in fitness, nutrition, and wellness.</p>
+
+        <div class="profile">
+            
+            <div class="profile-card">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture">
+                <h3>John Doe</h3>
+                <p>Age: 28 | Weight: 70kg | Height: 175cm</p>
+                <button>Edit Profile</button>
+            </div>
+
+            
+            <div class="charts">
+                <div class="chart-box">
+                    <h3>Health Overview</h3>
+                    <p>Chart placeholders for fitness, nutrition, and sleep data visualization.</p>
+                    
+                    <canvas id="healthChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <div class="section" id="fitness">
+        <h2>Fitness Tracking</h2>
+        <label for="steps">Steps Walked Today:</label>
+        <input type="number" id="steps" name="steps" placeholder="Enter steps">
+
+        <label for="exercise">Exercise:</label>
+        <select id="exercise" name="exercise">
+            <option value="none">Select Exercise</option>
+            <option value="running">Running</option>
+            <option value="cycling">Cycling</option>
+            <option value="yoga">Yoga</option>
+        </select>
+
+        <label for="exercise-duration">Duration (Minutes):</label>
+        <input type="number" id="exercise-duration" name="exercise-duration" placeholder="Enter duration">
+    </div>
+
+        <div class="section" id="nutrition">
+        <h2>Nutrition Tracking</h2>
+        <label for="calories">Calories Consumed Today:</label>
+        <input type="number" id="calories" name="calories" placeholder="Enter calories">
+
+        <label for="water">Water Intake (Liters):</label>
+        <input type="number" id="water" name="water" placeholder="Enter water intake in liters">
+    </div>
+
+    
+    <div class="section" id="sleep">
+        <h2>Sleep Tracking</h2>
+        <label for="sleep-hours">Hours Slept Last Night:</label>
+        <input type="number" id="sleep-hours" name="sleep-hours" placeholder="Enter hours of sleep">
+    </div>
+</div>
+
+
+<footer>
+    <p>&copy; 2024 Health Care Tracker. All rights reserved.</p>
+    <p><a href="#contact">Contact Us</a> | <a href="#privacy">Privacy Policy</a></p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+   
+    const ctx = document.getElementById('healthChart').getContext('2d');
+    const healthChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Fitness', 'Nutrition', 'Sleep'],
+            datasets: [{
+                label: 'Weekly Data',
+                data: [50, 60, 40], // Placeholder values
+                backgroundColor: ['#28a745', '#ffc107', '#17a2b8']
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+
+</body>
+</html>
